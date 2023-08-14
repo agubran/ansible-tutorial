@@ -1,0 +1,21 @@
+##Command used: 
+
+#ansible inventory
+create file [ex:inventory] and put all host that we want to automate and var that used [to use python3]
+
+#main commnad :
+ommand :    ansible -i inventory all -u root -m command -a "free -m" or  ansible -i inventory all -u root -a "free -m" 
+use forks : ansible -i inventory all -u root -m command -a "free -m" -f 1   //one by one not in parallel
+
+#use apt  
+install apatche server on all servers : ansible -i inventory all -u root -m apt -a "name=apatche2 state=present"  //if we run same commnad again to check status (change)
+remove  apatche server on all servers : ansible -i inventory all -u root -m apt -a "name=apatche2 state=absent"
+
+#use service commnad in ansible : 
+ansible -i inventory all -u root -m service -a "name=apache2 state=stopped"
+ansible -i inventory all -u root -m service -a "name=apache2 state=started" --limit "url.com"  //start service in that url
+
+#ansible playbook
+create new file with name main.yaml and write [---] in begining as a standard
+
+  
