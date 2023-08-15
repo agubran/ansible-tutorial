@@ -25,3 +25,5 @@ ansible-galaxy init base //role name is base -> this will create a folder with m
 
 #ansible vault
 
+#server security
+
